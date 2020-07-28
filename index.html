@@ -6,6 +6,7 @@
     <title>Pin Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/images.png" type="image/png">
 </head>
 <body>
     <div class="container">
@@ -99,6 +100,7 @@ function back() {
 
         document.getElementById("mySubmitMatched").style.display = "none";
         document.getElementById("mySubmitNotMatched").style.display = "block";
+            
         const button = document.getElementById('submitbutton');
             button.addEventListener('click', event => {
             document.getElementById('action').innerHTML = `Incorrect Pin count: ${event.detail}`;
@@ -108,8 +110,22 @@ function back() {
         else {
             document.getElementById("mySubmitMatched").style.display = "block";
             document.getElementById("mySubmitNotMatched").style.display = "none";
-          }          }
-     })   
+          }         
+    }
+    //ppp
+    var count=0;
+   $(document.getElementById("submitbutton")).click(function() {
+     count=count+1;
+       if(count==5){
+                $(this).attr("disabled", true);
+       }
+       else
+       {
+            $(this).attr("disabled", false);
+       }
+
+   });
+     });   
        
 
 </script>
